@@ -15,6 +15,7 @@ document.getElementById("answer_turn").innerHTML = "Answer Turn - " + player2_na
 
 function send() {
     norm_word = document.getElementById("word").value;
+    if (norm_word.length >= 5) {
     word = norm_word.toLowerCase();
     
     letter_1 = word.charAt(1);
@@ -35,6 +36,9 @@ function send() {
     row = final_word + input_box + check_box;
     document.getElementById("output").innerHTML = row;
     document.getElementById("word").value = "";
+    } else {
+        alert("Need to be atleast 5 words")
+    }
 }
 
 question_turn = "player1";
